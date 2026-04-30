@@ -7,7 +7,7 @@ public class ReelController : MonoBehaviour
     public bool isSpinning = false;
 
     private RectTransform rectTransform;
-    private float symbolHeight = 100f;
+    private float symbolHeight = 155f;
 
     private Coroutine stopRoutine;
 

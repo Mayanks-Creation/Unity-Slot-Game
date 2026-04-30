@@ -41,12 +41,12 @@ public class SlotMachineController : MonoBehaviour
 
         float chance = Random.value;
 
-        if (chance < 0.1f)
+        if (chance < 0.2f)
         {
             int symbol = Random.Range(0, 4);
             result[0] = result[1] = result[2] = symbol;
         }
-        else if (chance < 0.2f)
+        else if (chance < 0.5f)
         {
             int symbol = Random.Range(0, 4);
 
