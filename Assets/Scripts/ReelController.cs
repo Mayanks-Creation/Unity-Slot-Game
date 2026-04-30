@@ -7,7 +7,7 @@ public class ReelController : MonoBehaviour
     public bool isSpinning = false;
 
     private RectTransform rectTransform;
-    private float symbolHeight = 100f; // match your symbol size
+    private float symbolHeight = 100f;
 
     private Coroutine stopRoutine;
 
@@ -42,20 +42,38 @@ public class ReelController : MonoBehaviour
         isSpinning = true;
     }
 
-    public void StopSpin()
+    public void StopSpinOnSymbol(int symbolIndex)
     {
         isSpinning = false;
 
         if (stopRoutine != null)
             StopCoroutine(stopRoutine);
 
-        stopRoutine = StartCoroutine(SnapToGrid());
+        stopRoutine = StartCoroutine(SnapToSymbol(symbolIndex));
     }
 
-    IEnumerator SnapToGrid()
+    IEnumerator SnapToSymbol(int targetID)
     {
-        float currentY = rectTransform.anchoredPosition.y;
-        float targetY = Mathf.Round(currentY / symbolHeight) * symbolHeight;
+        SymbolItem[] symbols = GetComponentsInChildren<SymbolItem>();
+
+        SymbolItem target = null;
+
+        foreach (var s in symbols)
+        {
+            if (s.symbolID == targetID)
+            {
+                target = s;
+                break;
+            }
+        }
+
+        if (target == null)
+        {
+            Debug.LogError("Target symbol not found!");
+            yield break;
+        }
+
+        float targetY = -target.GetComponent<RectTransform>().localPosition.y;
 
         float duration = 0.2f;
         float time = 0f;

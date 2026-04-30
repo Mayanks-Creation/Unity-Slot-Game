@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 293692535851149360}
   - component: {fileID: 2228536795594352217}
   - component: {fileID: 1836285887160181182}
+  - component: {fileID: -8971946856454315151}
   m_Layer: 5
   m_Name: Symbol_2
   m_TagString: Untagged
@@ -65,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2193077994593488821, guid: d9a9e19bd256e484982c7433c473bf59, type: 3}
+  m_Sprite: {fileID: -2391669244243282240, guid: 7d521b9dbbda18048ae3aa21b58cc6db, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -75,3 +76,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-8971946856454315151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4418439913605950463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7b8674091d9cb49a31d02def9d713e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SymbolItem
+  symbolID: 2
